@@ -1,8 +1,6 @@
 services:
   wa-bridge:
-    # Build locally for testing, or pull from GHCR
-    build: ./wa-bridge
-    image: ghcr.io/raulpetruta/ha-whatsapp-bridge:latest
+    image: ghcr.io/cirolo63/ha-wa-bridge:latest
     container_name: ha-whatsapp-bridge
     restart: unless-stopped
     ports:
