@@ -1,0 +1,17 @@
+name: Build bridge di prova
+
+on:
+  push:
+    paths:
+      - "wa-bridge/**"
+      - ".github/workflows/build-bridge-test.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il codice
+        uses: actions/checkout@v4
+
+      - name: Costruisci l'immagine Docker
+        run: docker build -t ha-wa-bridge:test-1.34.7 ./wa-bridge
